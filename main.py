@@ -1,20 +1,21 @@
 #Функция ввода числа
 def input_number():
-    global n
     try:
         n = int(input("Введите число: "))
+        return n
     except ValueError:
         print("Ошибка: введено не число!")
 
 
 #Функция обратного отсчета
-def counting_down():
-    global n
-    while n >= 0:
-        print(n)
-        n -= 1
+def counting_down(num):
+    while num >= 0:
+        print(num)
+        num -= 1
 
 
 #Основное тело функции
-input_number()
-counting_down()
+try:
+    counting_down(input_number())
+except TypeError:
+    print("Программа завершена с ошибкой!")
